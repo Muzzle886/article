@@ -1,0 +1,46 @@
+.search-box {
+    display: flex;
+    flex-flow: row;
+    height: 2.5rem;
+}
+
+#keyword, #input-method {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    transition: all 0.5s;
+}
+
+.input-line {
+    display: flex;
+    padding: 1px;
+    width: 50%;
+    border-radius: 5px;
+    border: solid 1px #87a8d7;
+}
+
+#input-method {
+    width: 10%;
+}
+
+#keyword {
+    width: 90%;
+}
+
+#submit {
+    background: none;
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 4rem;
+    border: solid 1px #87a8d7;
+}
+
+#submit:focus {
+    box-shadow: 0 0 15px 1.5px #95B8E7
+}
+
+#search-result{
+    margin-top: 10px;
+}

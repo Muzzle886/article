@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索</title>
+
+    <script src="/js/default.js"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="/js/search.js"></script>
+</head>
+<body>
+<div class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item navbar-logo">文章体</a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a href="" class="navbar-item">主页</a>
+                <a href="/archives" class="navbar-item">归档</a>
+                <a href="/categories" class="navbar-item">分类</a>
+                <a href="/tags" class="navbar-item">标签</a>
+                <a href="/about" class="navbar-item">关于</a>
+            </div>
+            <div class="navbar-end">
+                <a href="javascript:;" class="navbar-item search">
+                    <img src="/img/search.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="search">
+    <div class="container search-container">
+        搜索
+        <form action="javascript:void(0);" method="post" class="search-box">
+            <div class="input-line">
+                <select name="method" id="input-method">
+                    <option value="content">内容</option>
+                    <option value="title">标题</option>
+                    <option value="author">作者</option>
+                    <option value="tag">标签</option>
+                </select>
+                <input type="text" name="keyword" class="form-control" id="keyword">
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">提交</button>
+        </form>
+        <div id="search-result"></div>
+    </div>
+
+</div>
+<div class="footer">
+    <div class="container footer-container">
+        <div>
+            <img src="/img/icon.svg" alt="" width=""> 文章体
+        </div>
+        <div style="font-size: 12px;"> &copy; 2021 Muzzle Powered by JavaWeb</div>
+        <div style="font-size: 14px;">备案号:<a href="https://beian.miit.gov.cn/">湘ICP备2021013149号</a></div>
+    </div>
+</div>
+</body>
+</html>

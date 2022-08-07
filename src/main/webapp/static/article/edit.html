@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+
+    <title>文章修改</title>
+
+
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script src="/js/marked.min.js"></script>
+    <link rel="stylesheet" href="/css/atom-one-dark.min.css">
+    <script src="/js/highlight.min.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/css/shard.min.css">
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/shards.min.js"></script>
+
+    <script src="/static/js/edit.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/article.css">
+</head>
+<body>
+<div class="create-article">
+    <form action="javascript:void(0);" class="article-form">
+        <div class="row">
+            <div class="form-group col">
+                <label for="input-title">标题</label>
+                <input type="text" class="form-control" name="title" id="input-title">
+            </div>
+            <div class="form-group col">
+                <label for="input-category">分类</label>
+                <select name="category" class="form-control" id="input-category">
+                    <option value="1">解决方案</option>
+                    <option value="2">技术研究</option>
+                    <option value="3">技术应用</option>
+                    <option value="4">工具使用</option>
+                    <option value="5">理论学习</option>
+                    <option value="6">杂</option>
+                </select>
+            </div>
+        </div>
+        <div>标签</div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="1" id="tags-1" name="tags">
+            <label for="tags-1" class="form-check-label">Java</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="2" id="tags-2" name="tags">
+            <label for="tags-2" class="form-check-label">Servlet</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="3" id="tags-3" name="tags">
+            <label for="tags-3" class="form-check-label">Markdown</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="4" id="tags-4" name="tags">
+            <label for="tags-4" class="form-check-label">Mybatis</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="5" id="tags-5" name="tags">
+            <label for="tags-5" class="form-check-label">HTML</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="6" id="tags-6" name="tags">
+            <label for="tags-6" class="form-check-label">CSS</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="7" id="tags-7" name="tags">
+            <label for="tags-7" class="form-check-label">JavaScript</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="8" id="tags-8" name="tags">
+            <label for="tags-8" class="form-check-label">Vue.js</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="9" id="tags-9" name="tags">
+            <label for="tags-9" class="form-check-label">Spring</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="10" id="tags-10" name="tags">
+            <label for="tags-10" class="form-check-label">Spring Cloud</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="11" id="tags-11" name="tags">
+            <label for="tags-11" class="form-check-label">Spring MVC</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="12" id="tags-12" name="tags">
+            <label for="tags-12" class="form-check-label">Spring Boot</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="13" id="tags-13" name="tags">
+            <label for="tags-13" class="form-check-label">Mysql</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="14" id="tags-14" name="tags">
+            <label for="tags-14" class="form-check-label">Java高并发</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="15" id="tags-15" name="tags">
+            <label for="tags-15" class="form-check-label">Node.js</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input" value="16" id="tags-16" name="tags">
+            <label for="tags-16" class="form-check-label">Jquery</label>
+        </div>
+        <div class="form-group">
+            <label for="text">正文</label>
+            <div>提示：如需插入图片，请将图片上传至网络，图片路径使用在线图片</div>
+            <textarea name="textarea" class="form-control" id="text" cols="100"
+                      rows="10"></textarea>
+        </div>
+        <button type="submit" id="article-submit" class="btn btn-primary">提交</button>
+    </form>
+    <div id="article-preview">
+        <h3>预览</h3>
+        <div class="preview-box"></div>
+    </div>
+</div>
+<style>
+    body {
+        margin: 20px;
+    }
+</style>
+</body>
+</html>

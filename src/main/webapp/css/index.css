@@ -1,0 +1,183 @@
+body {
+    background: #eee;
+    margin: 0;
+    color: #4a4a4a;
+    font-family: Ubuntu, Roboto, 'Open Sans', 'Microsoft YaHei', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+a, a:hover {
+    color: #4a4a4a;
+    text-decoration: none;
+}
+
+code {
+    font-family: Consolas;
+}
+
+.navbar,
+.navbar-menu,
+.navbar-start,
+.navbar-end,
+.content-main,
+.content-about {
+    align-items: stretch;
+    display: flex;
+}
+
+.navbar-main,
+.navbar-item {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 0.75rem;
+    margin: 0;
+}
+
+.navbar-main,
+.navbar-menu {
+    flex-grow: 1;
+    flex-shrink: 0;
+    overflow-x: auto;
+}
+
+.navbar-item {
+    color: #4a4a4a;
+}
+
+.navbar-item:hover {
+    background: #f2f2f2;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    padding: 0;
+    background: #fff;
+    position: relative;
+}
+
+.navbar-main,
+.footer,
+.content-main,
+.content-about {
+    box-shadow: 0 4px 10px rgb(0 0 0/5%);
+}
+
+.container {
+    display: flex;
+    margin: auto;
+    max-width: 1152px;
+    width: 1152px;
+}
+
+.navbar-menu {
+    margin-left: 0.75rem;
+}
+
+.navbar-start,
+.content-main {
+    justify-content: flex-start;
+    margin-right: auto;
+}
+
+.navbar-end, .content-right {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.navbar-end img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.content-main {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    background: #fff;
+}
+
+.content-main #title, .search-container #title {
+    text-align: left;
+    color: #4a4a4a;
+    font-size: 2em;
+}
+
+.content-main #title:hover {
+    color: #666;
+}
+
+.content-main #text {
+    color: #666;
+    height: 50px;
+    overflow: hidden;
+}
+
+.content-about {
+    display: block;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+}
+
+.footer {
+    margin-top: 20px;
+    background: #fff;
+    padding: 3rem 1.5rem 6rem;
+}
+
+.footer-container {
+    display: block;
+}
+
+.footer img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.contents {
+    border: 1px solid #eeeeee;
+    padding: 10px 20px;
+    height: 100px;
+}
+
+.search-container {
+    flex-flow: column;
+    background: #fff;
+    width: 1152px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.navbar-item button {
+    margin: auto 5px;
+    border: none;
+    background: none;
+}
+
+#submit {
+    display: inline-block;
+}
+
+.public {
+    display: block;
+    background: rgba(46, 78, 56, .6);
+    margin: 20px auto;
+    width: 80%;
+    height: 61px;
+    text-align: center;
+    line-height: 61px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

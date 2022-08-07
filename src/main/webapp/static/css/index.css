@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+}
+
+div.nav ul {
+    color: #000;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    width: 100%;
+    list-style: none;
+}
+
+div.nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+.main {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.left {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    background: #aaa;
+    width: 10%;
+    /*height: 100%;*/
+}
+
+.header {
+    padding: 5px 30px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.2em;
+    background: #888;
+}
+
+.nav-item {
+    display: block;
+    text-align: center;
+    line-height: 50px;
+}
+
+.nav-item:hover {
+    background: #bbb;
+}
+
+.view {
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+textarea {
+    width: 500px;
+    height: 300px;
+}
+
+.upload-window {
+    position: fixed;
+    background-color: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+}
+
+
+.upload {
+    position: relative;
+    display: flex;
+    width: 700px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
+    background: #fff;
+    opacity: 2;
+}
+
+.upload * {
+    opacity: 2;
+}
+
+.upload-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.upload-close img {
+    width: 25px;
+}
+
+.upload-container {
+    position: absolute;
+    padding: 10px;
+}
+
+.upload-container img {
+    margin: 10px;
+    height: 250px;
+}
+
+td textarea {
+    border: none;
+    background: none;
+}
+
+.tips {
+    display: none;
+    position: fixed;
+    padding: 20px;
+    background-color: #3a3a3a;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 309px;
+    border-radius: 10px;
+    color: #9f9f9f;
+}
+
+.warning {
+    display: none;
+    color: #000000;
+    position: fixed;
+    padding: 20px;
+    background-color: #aaa;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid rgba(200, 200, 200, .9);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 100;
+}
+
+.warning p {
+    margin: 30px;
+}
+
+.warning button {
+    margin: 30px;
+}

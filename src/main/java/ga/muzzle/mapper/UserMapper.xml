@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ga.muzzle.mapper.UserMapper">
+    <select id="getUser" resultType="user">
+        select *
+        from article.user;
+    </select>
+    <select id="getUserById" resultType="user">
+        select *
+        from article.user
+        where user_id = #{id}
+        limit 1;
+    </select>
+    <select id="getUserByUserName" parameterType="String" resultType="user">
+        select *
+        from article.user
+        where user_username = #{username}
+        limit 1;
+    </select>
+    <select id="getUserByName" resultType="user">
+        select *
+        from user
+        where user_name = #{name}
+        limit 1;
+    </select>
+    <insert id="reg" parameterType="user">
+        insert article.user
+            (user_tel, user_email, user_password, user_username, user_name)
+            value (#{tel}, #{email}, #{password}, #{username}, #{name});
+    </insert>
+    <update id="editUser" parameterType="user">
+        update article.user
+        set user_tel=#{tel}
+            and user_email = #{email}
+            and user_name = #{name}
+        where user_id = #{id}
+        limit 1;
+    </update>
+
+    <delete id="removeUser">
+        delete
+        from user
+        where user_id = #{id}
+        limit 1;
+    </delete>
+
+    <update id="banUser">
+        update user
+        set user_status = 1
+        where user_id = #{id}
+        limit 1;
+    </update>
+
+    <update id="pardonUser">
+        update user
+        set user_status = 0
+        where user_id = #{id}
+        limit 1;
+    </update>
+
+    <select id="adminLogin" resultType="long">
+        select admin_id
+        from admin
+        where admin_username = #{username}
+          and admin_password = #{password};
+    </select>
+
+    <select id="searchUser" resultType="user">
+        select *
+        from user
+        where user_name like #{keyword}
+        limit 1;
+    </select>
+
+    <insert id="follow">
+        insert into follow (follower_id, followers_id) value (#{follower}, #{followers});
+    </insert>
+
+    <delete id="unfollow">
+        delete
+        from follow
+        where follower_id = #{follower}
+          and followers_id = #{followers};
+    </delete>
+
+    <select id="getFollowStatus" resultType="long">
+        select COUNT(follow_id)
+        from follow
+        where follower_id = #{follower}
+          and followers_id = #{followers}
+        limit 1;
+    </select>
+
+    <select id="getFollowCount" resultType="long">
+        select COUNT(follow_id)
+        from follow
+        where follower_id = #{id};
+    </select>
+</mapper>

@@ -1,0 +1,21 @@
+.create-article {
+    display: flex;
+    flex-flow: row;
+    margin: 10px 15px;
+    padding: 20px;
+    /*width: 1152px;*/
+    background: #fff;
+    box-shadow: 0 4px 10px rgb(0 0 0/5%);;
+}
+
+.article-form {
+    justify-content: flex-start;
+    flex-flow: column;
+    width: 40%;
+}
+
+#article-preview {
+    padding-left: 20px;
+    justify-content: flex-end;
+    width: 60%;
+}

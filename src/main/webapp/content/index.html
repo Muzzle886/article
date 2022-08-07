@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章</title>
+    <script src="/js/default.js"></script>
+    <link rel="shortcut icon" href="/img/icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script src="/js/marked.min.js"></script>
+    <link rel="stylesheet" href="/css/atom-one-dark.min.css">
+    <script src="/js/highlight.min.js"></script>
+    <script src="/js/content.js"></script>
+    <link rel="stylesheet" href="/css/content.css">
+</head>
+
+<body>
+<div class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item navbar-logo">文章体</a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item">主页</a>
+                <a href="/archives" class="navbar-item">归档</a>
+                <a href="/categories/" class="navbar-item">分类</a>
+                <a href="/tags/" class="navbar-item">标签</a>
+                <a href="/about/" class="navbar-item">关于</a>
+            </div>
+            <div class="navbar-end">
+                <a href="/search.html" class="navbar-item search">
+                    <img src="/img/search.svg" alt="">
+                </a>
+                <a href="../user/login.html" id="status-1" class="navbar-item">登录</a>
+                <a href="../user/reg.html" id="status-2" class="navbar-item">注册</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="article">
+            <div id="title"></div>
+            <div class="article-info">
+                <img src="/img/calendar.svg" alt="" title="日期">
+                <div id="date"></div>
+                &nbsp;
+                <img src="/img/tag.svg" alt="标签" title="标签">
+                <div id="tags"></div>
+            </div>
+            <div class="line"></div>
+            <div id="text"></div>
+            <div id="favorite">
+                <img src="/img/favorite.svg" alt="" title="收藏">
+                <div id="favorite-count"></div>
+            </div>
+        </div>
+        <div class="author">
+            <img src="/img/user.svg" alt="">
+            <div>昵称：<span id="author"></span></div>
+            <div>粉丝数：<span id="follower"></span></div>
+            <button id="follow-btn">+关注</button>
+            <div class="tips"></div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container footer-container">
+        <div>
+            <img src="/img/icon.svg" alt="" width=""> 文章体
+        </div>
+        <div style="font-size: 12px;">&copy;2021 Muzzle Powered by JavaWeb</div>
+        <div style="font-size: 14px;">备案号:<a href="https://beian.miit.gov.cn/">湘ICP备2021013149号</a></div>
+    </div>
+</div>
+</body>
+
+</html>

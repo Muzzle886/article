@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ga.muzzle.mapper.ArticleMapper">
+
+    <select id="getAllArticle" resultType="article">
+        select article.article_id,
+               article_title,
+               article_author,
+               user_name,
+               article_date,
+               article_category,
+               category_name,
+               article_text
+        from article
+                 left join user on user.user_id = article.article_author
+                 left join category on category.category_id = article.article_category;
+    </select>
+
+    <select id="getArticleById" resultType="article">
+        select article.article_id,
+               article_title,
+               article_author,
+               user_name,
+               article_date,
+               article_category,
+               category_name,
+               article_text
+        from article
+                 left join user on user.user_id = article.article_author
+                 left join category on category.category_id = article.article_category
+        where article.article_id = #{id};
+    </select>
+
+    <select id="getArticleByUserId" resultType="article">
+        select article.article_id,
+               article_title,
+               article_author,
+               user_name,
+               article_date,
+               article_category,
+               category_name,
+               article_text
+        from article
+                 left join user on user.user_id = article.article_author
+                 left join category on category.category_id = article.article_category
+        where article_author = #{id};
+    </select>
+
+    <insert id="createArticle" parameterType="article" useGeneratedKeys="true" keyProperty="id">
+        insert into article
+        (article_title, article_author, article_date, article_category, article_text)
+        values (#{title}, #{author}, #{date}, #{categoryId}, #{text});
+    </insert>
+
+    <insert id="setTagMap" parameterType="articletag">
+        insert into article.tagsmap
+        (article_id, tags_id)
+        values
+        <foreach collection="tagsId" index="index" item="tag" separator=",">
+            (#{articleId},#{tag})
+        </foreach>
+    </insert>
+
+    <select id="getTag" resultType="string">
+        select tag_name
+        from tags
+                 inner join tagsmap on tags.tag_id = tagsmap.tags_id
+        where article_id = #{id};
+    </select>
+
+    <select id="getTagId" resultType="long">
+        select tag_id
+        from tags
+                 inner join tagsmap on tags.tag_id = tagsmap.tags_id
+        where article_id = #{id};
+    </select>
+
+    <insert id="collectionArticle">
+        insert into favorite
+            (article_id, user_id)
+            value (#{article_id}, #{user_id});
+    </insert>
+
+    <select id="getCollectionCount" resultType="favorite">
+        select *
+        from favorite
+        where article_id = #{id};
+    </select>
+
+    <select id="getCollectionStatus" resultType="favorite">
+        select *
+        from favorite
+        where article_id = #{articleId}
+          and user_id = #{userId};
+    </select>
+
+    <delete id="removeCollection">
+        delete
+        from favorite
+        where article_id = #{articleId}
+          and user_id = #{userId};
+    </delete>
+
+    <delete id="removeAllCollection">
+        delete
+        from favorite
+        where article_id = #{id};
+    </delete>
+
+    <delete id="deleteArticle">
+        delete
+        from article
+        where article_id = #{id};
+    </delete>
+
+    <update id="editArticle">
+        update article.article
+        set article_title    = #{title}
+          , article_category = #{categoryId}
+          , article_text     = #{text}
+        where article_id = #{id};
+    </update>
+
+    <delete id="deleteTag" parameterType="long">
+        delete
+        from tagsmap
+        where article_id = #{id};
+    </delete>
+
+    <select id="search" resultType="article">
+        select *
+        from article
+        where ${field} like #{keyword};
+    </select>
+
+    <select id="searchTag" resultType="long">
+        select article_id
+        from tagsmap
+                 left join tags on tagsmap.tags_id = tags.tag_id
+        where tag_name like #{keyword};
+    </select>
+
+    <select id="getCollectionArticle" resultType="article">
+        select article.article_id,
+               article_title,
+               article_author,
+               user_name,
+               article_date,
+               article_category,
+               category.category_name,
+               article_text
+        from article
+                 inner join user on user.user_id = article.article_author
+                 inner join category on category.category_id = article.article_category
+                 inner join favorite on article.article_id = favorite.article_id
+        where favorite.user_id = #{id};
+    </select>
+
+</mapper>
